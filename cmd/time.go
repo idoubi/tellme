@@ -11,6 +11,7 @@ import (
 var (
 	flagFormatStr       bool
 	flagFormatTimestamp bool
+	flagFormatInt       bool
 	flagFormatCustom    string
 )
 
@@ -35,7 +36,7 @@ var timeCmd = &cobra.Command{
 			fmt.Println(time1.Format(format))
 			return
 		}
-		if flagFormatTimestamp {
+		if flagFormatTimestamp || flagFormatInt {
 			time1 = now
 			if len(args) > 0 {
 				t, err := time.Parse(format, args[0])
@@ -71,5 +72,6 @@ func init() {
 	rootCmd.AddCommand(timeCmd)
 	timeCmd.Flags().BoolVarP(&flagFormatStr, "string", "s", false, "show time with format string")
 	timeCmd.Flags().BoolVarP(&flagFormatTimestamp, "timestamp", "t", false, "show time with format timestamp")
+	timeCmd.Flags().BoolVarP(&flagFormatInt, "int", "i", false, "show time with format timestamp")
 	timeCmd.Flags().StringVarP(&flagFormatCustom, "format", "f", "", "show time with custom format")
 }
