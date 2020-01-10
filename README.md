@@ -2,24 +2,49 @@
 
 ### 安装说明
 
+- MacOS 安装
+
 ```shell
 brew tap idoubi/tools
 brew install tellme
 ```
 
+- 其他系统安装
+
+下载源码，运行`go build`，运行生成的二进制文件。
+
 ### 使用示例
 
-- 百科查找 bk
+- 百科查找 baike
 
 ```shell
-tellme bk 周杰伦
-# 在百度百科查找周杰伦
+tellme baike 周杰伦
+# 百度百科查找
 
-tellme bk 周杰伦 -p wp
-# 在维基百科查找周杰伦
+tellme baike 周杰伦 -p wp
+# 维基百科查找
 
-tellme bk 周杰伦 -p hd
-# 在互动百科查找周杰伦
+tellme baike 周杰伦 -p hd
+# 互动百科查找
+```
+
+- 搜索 search
+
+```shell
+tellme search 周杰伦
+# google搜索
+
+tellme search 周杰伦 -p bd
+# 百度搜索
+
+tellme search 周杰伦 -p wx
+# 微信搜索
+
+tellme search 周杰伦 -p zh
+# 知乎搜索
+
+tellme search 周杰伦 -p jj
+# 掘金搜索
 ```
 
 - 日期时间 time
