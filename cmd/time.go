@@ -23,8 +23,9 @@ var (
 )
 
 var timeCmd = &cobra.Command{
-	Use:   "time",
-	Short: "something about time",
+	Use:     "time",
+	Aliases: []string{"tm"},
+	Short:   "something about time",
 	Run: func(cmd *cobra.Command, args []string) {
 		now := time.Now()
 		format1 := "2006-01-02 15:04:05"

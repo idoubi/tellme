@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	platform string
+	flagBaikePlatform string
 )
 
 var openCmds = map[string]string{
@@ -25,7 +25,7 @@ var baikeCmd = &cobra.Command{
 	Short:   "find things in baike site",
 	Args:    cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		err := findInBaike(args[0], platform)
+		err := findInBaike(args[0], flagBaikePlatform)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
@@ -35,7 +35,7 @@ var baikeCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(baikeCmd)
-	baikeCmd.Flags().StringVarP(&platform, "platform", "p", "baidu", "platform to find things")
+	baikeCmd.Flags().StringVarP(&flagBaikePlatform, "platform", "p", "baidu", "platform to find things")
 }
 
 // 百科查找
