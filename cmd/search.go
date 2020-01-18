@@ -3,8 +3,6 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"os/exec"
-	"runtime"
 
 	"github.com/spf13/cobra"
 )
@@ -56,15 +54,6 @@ func search(keyword, platform string) error {
 	if link == "" {
 		return fmt.Errorf("invalid platform")
 	}
-	goos := runtime.GOOS
-	opencmd := "open"
-	opencmd, ok := openCmds[goos]
-	if !ok {
-		return fmt.Errorf("can not open link in %s", goos)
-	}
-	if err := exec.Command(opencmd, link).Start(); err != nil {
-		return err
-	}
 
-	return nil
+	return openLink(link)
 }

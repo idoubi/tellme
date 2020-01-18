@@ -17,6 +17,8 @@ brew install tellme
 
 - 百科查找 baike
 
+命令：`baike`、`bk`、`wiki`、`wk`
+
 ```shell
 tellme baike 周杰伦
 # 百度百科查找
@@ -29,6 +31,8 @@ tellme baike 周杰伦 -p hd
 ```
 
 - 搜索 search
+
+命令：`search`、`sr`
 
 ```shell
 tellme search 周杰伦
@@ -45,6 +49,21 @@ tellme search 周杰伦 -p zh
 
 tellme search 周杰伦 -p jj
 # 掘金搜索
+```
+
+- 翻译 translate
+
+命令：`translate`、`fanyi`、`fy`
+
+```shell
+tellme fanyi 你好
+# 中译英
+
+tellme fanyi "hello world"
+# 英译中
+
+tellme fanyi -o "what's your name"
+# 打开浏览器查看释义
 ```
 
 - 日期时间 time

@@ -56,6 +56,11 @@ func findInBaike(keyword, platform string) error {
 	if link == "" {
 		return fmt.Errorf("invalid platform")
 	}
+
+	return openLink(link)
+}
+
+func openLink(link string) error {
 	goos := runtime.GOOS
 	opencmd := "open"
 	opencmd, ok := openCmds[goos]
